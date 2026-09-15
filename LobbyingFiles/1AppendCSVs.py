@@ -1,3 +1,7 @@
+"""
+This script adds all the CSVs together into 1 mainCSV
+"""
+
 import pandas as pd
 import os
 
