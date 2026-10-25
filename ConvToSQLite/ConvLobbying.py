@@ -53,6 +53,7 @@ for b in lobbying:
     print("[SQL STATEMENT INSERTED]")
     id = b["Id"]
     lobbyistname = b["Lobbyist Name"]
+    lobbyistcode = b["LobbyistCode"]
     contextdate = fixdate(b["Date Published"])
     relevantmatter = b["Relevant Matter"]
     details = b["Specific Details"]
@@ -67,14 +68,15 @@ for b in lobbying:
     #add data to SQLite database
     cur.execute("""
         INSERT OR REPLACE INTO Lobbying (
-        ID, LobbyistName, contextDate, RelevantMatter, Details,
+        ID, LobbyistName, LobbyistCode, contextDate, RelevantMatter, Details,
         Lobbied, SubjectMatter, IntendedResults,
         LobbyingActivities, MainLobbyist, Membercodes, NamesOfMembers, JSON
         )
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
     """, (
         id,
         lobbyistname,
+        lobbyistcode,
         contextdate,
         relevantmatter,
         details,

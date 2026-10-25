@@ -14,7 +14,7 @@ csvs = os.path.join(filepathabove, "csvlist")
 
 x = 1
 
-while x < 34:
+while x < 33:
     csvfile = os.path.join(csvs, str(x) + ".csv")
     csvv = pd.read_csv(csvfile)
 
